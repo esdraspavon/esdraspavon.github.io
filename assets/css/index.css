@@ -1,40 +1,69 @@
-body{
-	margin: 0;
+body {
+  margin: 0;
+  background: black;
+
+  font-family: "Montserrat", sans-serif;
 }
-.container{
-	background: #090909;
+.container {
+  background: #090909;
 }
-.hero{
-	position: absolute;
-	display: grid;
-	color:#fefefe;
-	justify-items: center;
-	height: 100%;
-	width: 100%;
+.hero {
+  position: absolute;
+  display: grid;
+  color: #fefefe;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
 }
-.social-medias{
-	display: grid;
-	grid-auto-flow:column; 
-	grid-column-gap:50px; 
-	font-size: 25px;
-	justify-self:end;
-	margin-top: 20px;
-	margin-right: 50px;
+.social-medias {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 50px;
+  font-size: 25px;
+  justify-self: end;
+  margin-top: 20px;
+  margin-right: 50px;
 }
-.social-medias a{
-	color: white;
+.social-medias a {
+  color: white;
 }
-.texto-intro{
-	text-align: center;
+.texto-intro {
+  text-align: center;
 }
-.nombre{
-	border-bottom: 1px solid #fefefe;
-	margin: 0;
-	font-size: 65px;
+.nombre {
+  border-bottom: 1px solid #fefefe;
+  margin: 0;
+  font-size: 65px;
 }
-.particles{
-	position: absolute;
-	z-index: -1;
-	height: 100%;
-	width: 100%;
+.particles {
+  /* position: absolute;
+	z-index: -1; */
+  height: 100vh;
+  width: 100%;
+}
+.about-me {
+  color: #fefefe;
+  margin: auto 3em;
+  text-align: center;
+}
+.about-me p {
+  font-size: 2.8em;
+  font-weight: 700;
+}
+.about-me strong {
+  font-weight: 700;
+  color: #b3a577;
+}
+.about-me__img {
+  border-radius: 50%;
+  height: 18em;
+}
+@media (max-width: 500px) {
+  .about-me__img {
+    height: 10em;
+  }
+  .about-me p {
+    font-size: 2em;
+  }
 }
