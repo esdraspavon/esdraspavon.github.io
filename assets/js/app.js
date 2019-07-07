@@ -1,5 +1,5 @@
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load("particles-js", "assets/js/particles.json", function() {
+particlesJS.load("particles-js", "./assets/js/particles.json", function() {
   console.log("callback - particles.js config loaded");
 });
 
@@ -28,9 +28,9 @@ init();
 //   //$('.slider-container .slide:nth-last-child(-n+4)').prependTo('.slider-container');
 //   init();
 // });
-// $(window).resize(function() {
-//   init();
-// });
+window.addEventListener("resize", function() {
+   init();
+});
 function init() {
   // elements
 
@@ -107,15 +107,11 @@ function controls(frameWidth, scollWidth) {
   next.addEventListener(
     "click",
     function() {
-      console.log(currentSliderCount);
-      console.log(sliderCount);
-      scollWidth = scollWidth + frameWidth;
+      scollWidth = scollWidth - frameWidth;
 
-      console.log(frameWidth);
-      console.log(scollWidth);
-      sliderContainer.style.left = `${-scollWidth}px`;
+      sliderContainer.style.left = `${scollWidth}px`;
 
-      if (currentSliderCount >= sliderCount - 1) {
+      if (currentSliderCount >= sliderCount) {
         sliderContainer.style.left = 0;
         currentSliderCount = 0;
         scollWidth = 0;
@@ -127,8 +123,11 @@ function controls(frameWidth, scollWidth) {
   );
 
   prev.addEventListener("click", function() {
-    scollWidth = scollWidth - frameWidth;
+    if(!currentSliderCount==0){
+
+    scollWidth = scollWidth + frameWidth;
     sliderContainer.style.left = `${scollWidth}px`;
     currentSliderCount--;
+    }
   });
 }
