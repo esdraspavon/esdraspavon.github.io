@@ -63,7 +63,8 @@ body {
   width: 100%;
   overflow-x: auto;
   position: relative;
-  margin: 0 30px;
+  padding: 0 30px;
+  box-sizing: border-box;
 }
 
 .projects h3{
